@@ -8,10 +8,29 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative bg-background">
-      {/* Subtle background accent */}
+    <section className="min-h-screen flex items-center justify-center relative bg-background overflow-hidden">
+      {/* Professional animated background */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+        {/* Floating geometric shapes */}
+        <div className="absolute top-20 left-10 w-4 h-4 bg-primary/20 rounded-full animate-float"></div>
+        <div className="absolute top-40 right-20 w-6 h-6 bg-primary/10 rotate-45 animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-32 left-1/4 w-3 h-3 bg-primary/15 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-60 right-1/3 w-5 h-5 bg-primary/10 rotate-45 animate-float" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute bottom-20 right-10 w-4 h-4 bg-primary/20 rounded-full animate-float" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute top-32 left-1/3 w-2 h-2 bg-primary/25 animate-float" style={{ animationDelay: '0.5s' }}></div>
+        
+        {/* Larger background elements */}
+        <div className="absolute top-1/4 left-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl animate-float" style={{ animationDelay: '1.5s' }}></div>
+        <div className="absolute bottom-1/4 right-0 w-40 h-40 bg-primary/3 rounded-full blur-3xl animate-float" style={{ animationDelay: '2.5s' }}></div>
+        
+        {/* Grid pattern overlay */}
+        <div className="absolute inset-0 opacity-[0.02]" style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
+          backgroundSize: '40px 40px'
+        }}></div>
+        
+        {/* Subtle gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.01] via-transparent to-primary/[0.02]"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
