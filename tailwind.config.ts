@@ -134,6 +134,12 @@ export default {
 				'float': 'float 6s ease-in-out infinite',
 				'slide-up': 'slide-up 0.6s ease-out',
 				'neon-border': 'neon-border 2s ease-in-out infinite'
+			},
+			perspective: {
+				'distant': '1000px'
+			},
+			transformStyle: {
+				'preserve-3d': 'preserve-3d'
 			}
 		}
 	},
