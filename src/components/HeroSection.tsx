@@ -8,12 +8,12 @@ import { Mesh } from "three";
 // 3D Scene Component - Futuristic Robot-like Design
 const TechCube = ({ position }: { position: [number, number, number] }) => {
   const meshRef = useRef<Mesh>(null);
-  
+
   return (
     <Float speed={1.0} rotationIntensity={0.6} floatIntensity={0.8}>
       <mesh ref={meshRef} position={position}>
         <boxGeometry args={[0.6, 0.6, 0.6]} />
-        <meshStandardMaterial 
+        <meshStandardMaterial
           color="#1a1a1a"
           emissive="#ff6b35"
           emissiveIntensity={0.1}
@@ -24,7 +24,7 @@ const TechCube = ({ position }: { position: [number, number, number] }) => {
       {/* Inner glowing core */}
       <mesh position={position}>
         <boxGeometry args={[0.3, 0.3, 0.3]} />
-        <meshStandardMaterial 
+        <meshStandardMaterial
           color="#ff6b35"
           emissive="#ff6b35"
           emissiveIntensity={0.5}
@@ -38,12 +38,12 @@ const TechCube = ({ position }: { position: [number, number, number] }) => {
 
 const RoboticSphere = ({ position, size = 0.5 }: { position: [number, number, number], size?: number }) => {
   const meshRef = useRef<Mesh>(null);
-  
+
   return (
     <Float speed={0.7} rotationIntensity={0.3} floatIntensity={0.5}>
       <mesh ref={meshRef} position={position}>
         <sphereGeometry args={[size, 32, 32]} />
-        <meshStandardMaterial 
+        <meshStandardMaterial
           color="#2a2a2a"
           emissive="#4a9eff"
           emissiveIntensity={0.2}
@@ -54,9 +54,9 @@ const RoboticSphere = ({ position, size = 0.5 }: { position: [number, number, nu
       {/* Outer energy field */}
       <mesh position={position}>
         <sphereGeometry args={[size * 1.2, 16, 16]} />
-        <meshStandardMaterial 
+        <meshStandardMaterial
           color="#4a9eff"
-          transparent 
+          transparent
           opacity={0.15}
           emissive="#4a9eff"
           emissiveIntensity={0.3}
@@ -68,12 +68,12 @@ const RoboticSphere = ({ position, size = 0.5 }: { position: [number, number, nu
 
 const TechRing = ({ position }: { position: [number, number, number] }) => {
   const meshRef = useRef<Mesh>(null);
-  
+
   return (
     <Float speed={0.5} rotationIntensity={1.2} floatIntensity={0.3}>
       <mesh ref={meshRef} position={position}>
         <torusGeometry args={[1.0, 0.1, 16, 100]} />
-        <meshStandardMaterial 
+        <meshStandardMaterial
           color="#1a1a1a"
           emissive="#ff6b35"
           emissiveIntensity={0.3}
@@ -84,7 +84,7 @@ const TechRing = ({ position }: { position: [number, number, number] }) => {
       {/* Inner glowing ring */}
       <mesh position={position}>
         <torusGeometry args={[1.0, 0.05, 8, 50]} />
-        <meshStandardMaterial 
+        <meshStandardMaterial
           color="#ff6b35"
           emissive="#ff6b35"
           emissiveIntensity={0.8}
@@ -98,12 +98,12 @@ const TechRing = ({ position }: { position: [number, number, number] }) => {
 
 const HoloParticle = ({ position }: { position: [number, number, number] }) => {
   const meshRef = useRef<Mesh>(null);
-  
+
   return (
     <Float speed={1.5} rotationIntensity={0.2} floatIntensity={1.5}>
       <mesh ref={meshRef} position={position}>
         <octahedronGeometry args={[0.08]} />
-        <meshStandardMaterial 
+        <meshStandardMaterial
           color="#4a9eff"
           emissive="#4a9eff"
           emissiveIntensity={0.6}
@@ -125,19 +125,19 @@ const Scene3D = () => {
       <pointLight position={[10, 10, 10]} intensity={1.5} color="#ff6b35" castShadow />
       <pointLight position={[-10, -10, 5]} intensity={1.0} color="#4a9eff" />
       <pointLight position={[0, 0, 10]} intensity={0.8} color="#ffffff" />
-      
+
       {/* Main robotic elements */}
       <RoboticSphere position={[1.2, 0.8, 0]} size={0.6} />
       <RoboticSphere position={[-1.0, -0.6, -0.5]} size={0.4} />
       <RoboticSphere position={[0.2, -1.2, 0.8]} size={0.5} />
-      
+
       {/* Tech cubes */}
       <TechCube position={[1.8, -0.3, -0.2]} />
       <TechCube position={[-1.5, 1.2, 0.3]} />
-      
+
       {/* Floating tech ring */}
       <TechRing position={[-0.5, 0.2, -0.8]} />
-      
+
       {/* Holographic particles for atmosphere */}
       <HoloParticle position={[2.0, 1.5, 0.2]} />
       <HoloParticle position={[-2.0, 0.3, 0.5]} />
@@ -147,10 +147,10 @@ const Scene3D = () => {
       <HoloParticle position={[-1.2, 1.8, 0.3]} />
       <HoloParticle position={[0.5, 1.2, 1.0]} />
       <HoloParticle position={[-0.8, -1.5, -0.8]} />
-      
+
       {/* Subtle orbit controls */}
-      <OrbitControls 
-        enableZoom={false} 
+      <OrbitControls
+        enableZoom={false}
         enablePan={false}
         autoRotate
         autoRotateSpeed={0.4}
@@ -171,7 +171,7 @@ const HeroSection = () => {
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Modern dark gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-darker-surface to-dark-surface"></div>
-      
+
       {/* Animated particles and flowing elements */}
       <div className="absolute inset-0">
         {/* Floating particles */}
@@ -180,17 +180,17 @@ const HeroSection = () => {
         <div className="absolute bottom-32 left-1/4 w-1.5 h-1.5 bg-primary/25 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
         <div className="absolute top-60 right-1/3 w-2 h-2 bg-accent/30 rounded-full animate-float" style={{ animationDelay: '3s' }}></div>
         <div className="absolute bottom-20 right-10 w-1 h-1 bg-primary/35 rounded-full animate-float" style={{ animationDelay: '4s' }}></div>
-        
+
         {/* Glowing abstract lines */}
         <div className="absolute top-1/3 left-0 w-40 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent animate-float" style={{ animationDelay: '1.5s' }}></div>
         <div className="absolute bottom-1/3 right-0 w-32 h-px bg-gradient-to-l from-transparent via-accent/15 to-transparent animate-float" style={{ animationDelay: '2.5s' }}></div>
-        
+
         {/* Subtle grid pattern */}
         <div className="absolute inset-0 opacity-[0.02]" style={{
           backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
           backgroundSize: '60px 60px'
         }}></div>
-        
+
         {/* Large blur elements for depth */}
         <div className="absolute top-1/4 -left-20 w-60 h-60 bg-primary/[0.03] rounded-full blur-3xl animate-float" style={{ animationDelay: '0.5s' }}></div>
         <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-accent/[0.02] rounded-full blur-3xl animate-float" style={{ animationDelay: '1.8s' }}></div>
@@ -217,25 +217,25 @@ const HeroSection = () => {
             {/* Tagline */}
             <div className="animate-slide-up" style={{ animationDelay: '0.4s' }}>
               <p className="font-body text-lg md:text-xl text-muted-foreground leading-relaxed max-w-lg">
-                Computer Science Graduate crafting innovative solutions with modern technologies. 
+                Computer Science Graduate crafting innovative solutions with modern technologies.
                 Aspiring Master's student focused on AI and full-stack development.
               </p>
             </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 animate-slide-up" style={{ animationDelay: '0.6s' }}>
-              <Button 
-                variant="default" 
-                size="lg" 
+              <Button
+                variant="default"
+                size="lg"
                 onClick={() => scrollToSection('projects')}
                 className="group bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow-primary"
               >
                 View My Work
                 <ArrowDown className="ml-2 w-4 h-4 group-hover:translate-y-1 transition-transform" />
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
+              <Button
+                variant="outline"
+                size="lg"
                 onClick={() => scrollToSection('contact')}
                 className="border-primary/50 text-foreground hover:bg-primary/10 hover:border-primary transition-all duration-300"
               >
@@ -246,24 +246,24 @@ const HeroSection = () => {
 
             {/* Social Links */}
             <div className="flex gap-4 animate-slide-up" style={{ animationDelay: '0.8s' }}>
-              <a 
-                href="https://github.com/hiravjoshi" 
-                target="_blank" 
+              <a
+                href="https://github.com/hiravjoshi-git"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-lg border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 group"
               >
                 <Github className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
               </a>
-              <a 
-                href="https://linkedin.com/in/hiravjoshi" 
-                target="_blank" 
+              <a
+                href="https://linkedin.com/in/hiravjoshi"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-lg border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 group"
               >
                 <Linkedin className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
               </a>
-              <a 
-                href="mailto:hirav.joshi@example.com" 
+              <a
+                href="mailto:hirav.joshi@example.com"
                 className="p-3 rounded-lg border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 group"
               >
                 <Mail className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
