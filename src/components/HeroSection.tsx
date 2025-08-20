@@ -1,5 +1,72 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Github, Linkedin, Mail, Code2, Terminal, Cpu } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { Canvas } from "@react-three/fiber";
+import { Float, OrbitControls } from "@react-three/drei";
+import { Suspense, useRef } from "react";
+import { Mesh } from "three";
+
+// 3D Scene Component
+const FloatingCube = ({ position }: { position: [number, number, number] }) => {
+  const meshRef = useRef<Mesh>(null);
+  
+  return (
+    <Float speed={1.5} rotationIntensity={1} floatIntensity={0.5}>
+      <mesh ref={meshRef} position={position}>
+        <boxGeometry args={[0.8, 0.8, 0.8]} />
+        <meshStandardMaterial 
+          color="hsl(var(--primary))" 
+          transparent 
+          opacity={0.7}
+          roughness={0.3}
+          metalness={0.1}
+        />
+      </mesh>
+    </Float>
+  );
+};
+
+const FloatingSphere = ({ position }: { position: [number, number, number] }) => {
+  const meshRef = useRef<Mesh>(null);
+  
+  return (
+    <Float speed={2} rotationIntensity={0.5} floatIntensity={0.8}>
+      <mesh ref={meshRef} position={position}>
+        <sphereGeometry args={[0.5, 32, 32]} />
+        <meshStandardMaterial 
+          color="hsl(var(--accent))" 
+          transparent 
+          opacity={0.6}
+          roughness={0.2}
+          metalness={0.3}
+        />
+      </mesh>
+    </Float>
+  );
+};
+
+const Scene3D = () => {
+  return (
+    <>
+      <ambientLight intensity={0.3} />
+      <pointLight position={[10, 10, 10]} intensity={0.8} color="hsl(var(--primary))" />
+      <pointLight position={[-10, -10, 5]} intensity={0.4} color="hsl(var(--accent))" />
+      
+      <FloatingCube position={[1, 1, 0]} />
+      <FloatingCube position={[-1.5, -0.5, -1]} />
+      <FloatingSphere position={[0.5, -1.5, 0.5]} />
+      <FloatingSphere position={[-0.8, 1.2, -0.5]} />
+      
+      <OrbitControls 
+        enableZoom={false} 
+        enablePan={false}
+        autoRotate
+        autoRotateSpeed={0.5}
+        maxPolarAngle={Math.PI / 2}
+        minPolarAngle={Math.PI / 2}
+      />
+    </>
+  );
+};
 
 const HeroSection = () => {
   const scrollToSection = (sectionId: string) => {
@@ -111,54 +178,21 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right Column - Abstract Code Elements */}
+          {/* Right Column - 3D Scene */}
           <div className="relative animate-slide-up" style={{ animationDelay: '0.4s' }}>
-            <div className="relative max-w-md mx-auto lg:mx-0 lg:ml-auto">
-              {/* Abstract code blocks */}
-              <div className="space-y-4">
-                {/* Code block 1 */}
-                <div className="bg-card/30 backdrop-blur-sm border border-primary/20 rounded-lg p-4 animate-float">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Code2 className="w-4 h-4 text-primary" />
-                    <div className="w-16 h-2 bg-primary/40 rounded"></div>
-                  </div>
-                  <div className="space-y-1">
-                    <div className="w-24 h-1.5 bg-muted-foreground/30 rounded"></div>
-                    <div className="w-20 h-1.5 bg-accent/40 rounded"></div>
-                    <div className="w-28 h-1.5 bg-muted-foreground/20 rounded"></div>
-                  </div>
+            <div className="h-96 w-full max-w-md mx-auto lg:mx-0 lg:ml-auto">
+              <Suspense fallback={
+                <div className="h-full w-full flex items-center justify-center">
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
                 </div>
-
-                {/* Code block 2 */}
-                <div className="bg-card/20 backdrop-blur-sm border border-accent/20 rounded-lg p-4 ml-8 animate-float" style={{ animationDelay: '1s' }}>
-                  <div className="flex items-center gap-2 mb-2">
-                    <Terminal className="w-4 h-4 text-accent" />
-                    <div className="w-12 h-2 bg-accent/40 rounded"></div>
-                  </div>
-                  <div className="space-y-1">
-                    <div className="w-20 h-1.5 bg-muted-foreground/25 rounded"></div>
-                    <div className="w-24 h-1.5 bg-primary/30 rounded"></div>
-                  </div>
-                </div>
-
-                {/* Code block 3 */}
-                <div className="bg-card/25 backdrop-blur-sm border border-primary/15 rounded-lg p-4 animate-float" style={{ animationDelay: '2s' }}>
-                  <div className="flex items-center gap-2 mb-2">
-                    <Cpu className="w-4 h-4 text-primary" />
-                    <div className="w-14 h-2 bg-primary/30 rounded"></div>
-                  </div>
-                  <div className="space-y-1">
-                    <div className="w-32 h-1.5 bg-muted-foreground/30 rounded"></div>
-                    <div className="w-16 h-1.5 bg-accent/35 rounded"></div>
-                    <div className="w-20 h-1.5 bg-muted-foreground/25 rounded"></div>
-                    <div className="w-24 h-1.5 bg-primary/25 rounded"></div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Glowing accent elements */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary/20 rounded-full blur-md animate-glow-pulse"></div>
-              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-accent/25 rounded-full blur-md animate-glow-pulse" style={{ animationDelay: '1.5s' }}></div>
+              }>
+                <Canvas
+                  camera={{ position: [0, 0, 5], fov: 60 }}
+                  className="rounded-lg"
+                >
+                  <Scene3D />
+                </Canvas>
+              </Suspense>
             </div>
           </div>
         </div>
