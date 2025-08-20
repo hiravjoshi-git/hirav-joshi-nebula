@@ -6,38 +6,74 @@ import { Suspense, useRef } from "react";
 import { Mesh } from "three";
 
 // 3D Scene Component
-const FloatingCube = ({ position }: { position: [number, number, number] }) => {
+const FloatingParticle = ({ position }: { position: [number, number, number] }) => {
   const meshRef = useRef<Mesh>(null);
   
   return (
-    <Float speed={1.5} rotationIntensity={1} floatIntensity={0.5}>
+    <Float speed={1.2} rotationIntensity={0.3} floatIntensity={1.2}>
       <mesh ref={meshRef} position={position}>
-        <boxGeometry args={[0.8, 0.8, 0.8]} />
+        <sphereGeometry args={[0.1, 16, 16]} />
         <meshStandardMaterial 
-          color="hsl(var(--primary))" 
+          color="hsl(var(--accent))" 
           transparent 
-          opacity={0.7}
-          roughness={0.3}
-          metalness={0.1}
+          opacity={0.8}
+          emissive="hsl(var(--accent))"
+          emissiveIntensity={0.3}
+          roughness={0.1}
+          metalness={0.9}
         />
       </mesh>
     </Float>
   );
 };
 
-const FloatingSphere = ({ position }: { position: [number, number, number] }) => {
+const GlowingSphere = ({ position, size = 0.4 }: { position: [number, number, number], size?: number }) => {
   const meshRef = useRef<Mesh>(null);
   
   return (
-    <Float speed={2} rotationIntensity={0.5} floatIntensity={0.8}>
+    <Float speed={0.8} rotationIntensity={0.2} floatIntensity={0.6}>
       <mesh ref={meshRef} position={position}>
-        <sphereGeometry args={[0.5, 32, 32]} />
+        <sphereGeometry args={[size, 32, 32]} />
+        <meshStandardMaterial 
+          color="hsl(var(--primary))" 
+          transparent 
+          opacity={0.4}
+          emissive="hsl(var(--primary))"
+          emissiveIntensity={0.2}
+          roughness={0.0}
+          metalness={1.0}
+        />
+      </mesh>
+      {/* Outer glow effect */}
+      <mesh position={position}>
+        <sphereGeometry args={[size * 1.3, 16, 16]} />
+        <meshStandardMaterial 
+          color="hsl(var(--primary))" 
+          transparent 
+          opacity={0.1}
+          emissive="hsl(var(--primary))"
+          emissiveIntensity={0.1}
+        />
+      </mesh>
+    </Float>
+  );
+};
+
+const FloatingRing = ({ position }: { position: [number, number, number] }) => {
+  const meshRef = useRef<Mesh>(null);
+  
+  return (
+    <Float speed={0.6} rotationIntensity={0.8} floatIntensity={0.4}>
+      <mesh ref={meshRef} position={position}>
+        <torusGeometry args={[0.8, 0.08, 16, 100]} />
         <meshStandardMaterial 
           color="hsl(var(--accent))" 
           transparent 
-          opacity={0.6}
+          opacity={0.3}
+          emissive="hsl(var(--accent))"
+          emissiveIntensity={0.15}
           roughness={0.2}
-          metalness={0.3}
+          metalness={0.8}
         />
       </mesh>
     </Float>
@@ -47,22 +83,36 @@ const FloatingSphere = ({ position }: { position: [number, number, number] }) =>
 const Scene3D = () => {
   return (
     <>
-      <ambientLight intensity={0.3} />
-      <pointLight position={[10, 10, 10]} intensity={0.8} color="hsl(var(--primary))" />
-      <pointLight position={[-10, -10, 5]} intensity={0.4} color="hsl(var(--accent))" />
+      {/* Enhanced lighting setup */}
+      <ambientLight intensity={0.2} />
+      <pointLight position={[10, 10, 10]} intensity={1.2} color="hsl(var(--primary))" castShadow />
+      <pointLight position={[-10, -10, 5]} intensity={0.8} color="hsl(var(--accent))" />
+      <pointLight position={[0, 0, 10]} intensity={0.5} color="hsl(var(--muted-foreground))" />
       
-      <FloatingCube position={[1, 1, 0]} />
-      <FloatingCube position={[-1.5, -0.5, -1]} />
-      <FloatingSphere position={[0.5, -1.5, 0.5]} />
-      <FloatingSphere position={[-0.8, 1.2, -0.5]} />
+      {/* Main glowing spheres */}
+      <GlowingSphere position={[1.2, 0.8, 0]} size={0.5} />
+      <GlowingSphere position={[-1.0, -0.6, -0.5]} size={0.3} />
+      <GlowingSphere position={[0.2, -1.2, 0.8]} size={0.4} />
       
+      {/* Floating ring */}
+      <FloatingRing position={[-0.5, 1.0, -0.3]} />
+      
+      {/* Small particles for atmosphere */}
+      <FloatingParticle position={[1.8, 1.5, 0.2]} />
+      <FloatingParticle position={[-1.8, 0.3, 0.5]} />
+      <FloatingParticle position={[0.8, -1.8, -0.2]} />
+      <FloatingParticle position={[-0.3, -0.8, 1.2]} />
+      <FloatingParticle position={[1.5, -0.2, -0.8]} />
+      <FloatingParticle position={[-1.2, 1.6, 0.3]} />
+      
+      {/* Subtle orbit controls */}
       <OrbitControls 
         enableZoom={false} 
         enablePan={false}
         autoRotate
-        autoRotateSpeed={0.5}
-        maxPolarAngle={Math.PI / 2}
-        minPolarAngle={Math.PI / 2}
+        autoRotateSpeed={0.3}
+        maxPolarAngle={Math.PI / 1.8}
+        minPolarAngle={Math.PI / 2.5}
       />
     </>
   );
