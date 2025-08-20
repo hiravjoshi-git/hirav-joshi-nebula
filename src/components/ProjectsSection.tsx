@@ -6,13 +6,13 @@ import { ExternalLink, Github, Cloud, Gamepad2, QrCode, PenTool, ShoppingCart, T
 const ProjectsSection = () => {
   const projects = [
     {
-      title: "Weather App Website",
-      description: "Real-time weather application with interactive maps, forecasts, and location-based services. Features responsive design and API integration.",
+      title: "Sushiman Website",
+      description: "Japanese cuisine-themed landing page showcasing sushi menus, trending items, customer testimonials, and newsletter integration. Features modern design, smooth navigation, and engaging UI elements.",
       icon: Cloud,
-      techStack: ["React", "TypeScript", "Weather API", "Tailwind CSS"],
+      techStack: ["HTML", "CSS"],
       color: "neon-blue",
       github: "#",
-      demo: "#"
+      demo: "https://sushiman-hiravjoshi.web.app/"
     },
     {
       title: "Sudoku Solver & Game",
@@ -86,13 +86,13 @@ const ProjectsSection = () => {
             const hoverBorderColor = `hover:border-${project.color}`;
             const iconBgColor = `bg-${project.color}/10`;
             const iconTextColor = `text-${project.color}`;
-            const shadowClass = project.color === 'neon-blue' ? 'hover:shadow-elegant' : 
-                               project.color === 'electric-purple' ? 'hover:shadow-glow-secondary' :
-                               'hover:shadow-[0_4px_16px_hsl(var(--cyber-green)/0.2)]';
-            
+            const shadowClass = project.color === 'neon-blue' ? 'hover:shadow-elegant' :
+              project.color === 'electric-purple' ? 'hover:shadow-glow-secondary' :
+                'hover:shadow-[0_4px_16px_hsl(var(--cyber-green)/0.2)]';
+
             return (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className={`bg-dark-surface ${borderColor} ${hoverBorderColor} ${shadowClass} transition-all duration-300 hover:scale-105 group animate-slide-up`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
@@ -118,12 +118,12 @@ const ProjectsSection = () => {
                   <p className="font-body text-silver-text mb-6 leading-relaxed">
                     {project.description}
                   </p>
-                  
+
                   <div className="flex flex-wrap gap-2">
                     {project.techStack.map((tech, techIndex) => (
-                      <Badge 
-                        key={techIndex} 
-                        variant="outline" 
+                      <Badge
+                        key={techIndex}
+                        variant="outline"
                         className={`border-${project.color}/30 text-${project.color} hover:bg-${project.color}/10 transition-colors`}
                       >
                         {tech}

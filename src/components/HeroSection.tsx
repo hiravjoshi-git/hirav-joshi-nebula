@@ -210,7 +210,7 @@ const HeroSection = () => {
             {/* Title */}
             <div className="animate-slide-up" style={{ animationDelay: '0.2s' }}>
               <h2 className="font-heading text-xl md:text-2xl xl:text-3xl text-primary font-semibold">
-                Full-Stack Developer | Flutter | Data Science
+                Operation Executive | Flutter Developer
               </h2>
             </div>
 
@@ -218,7 +218,7 @@ const HeroSection = () => {
             <div className="animate-slide-up" style={{ animationDelay: '0.4s' }}>
               <p className="font-body text-lg md:text-xl text-muted-foreground leading-relaxed max-w-lg">
                 Computer Science Graduate crafting innovative solutions with modern technologies.
-                Aspiring Master's student focused on AI and full-stack development.
+                Blending design and technology to create impactful digital products.
               </p>
             </div>
 
@@ -255,7 +255,7 @@ const HeroSection = () => {
                 <Github className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
               </a>
               <a
-                href="https://linkedin.com/in/hiravjoshi"
+                href="https://www.linkedin.com/in/hirav-joshi/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-lg border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 group"
@@ -263,7 +263,7 @@ const HeroSection = () => {
                 <Linkedin className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
               </a>
               <a
-                href="mailto:hirav.joshi@example.com"
+                href="mailto:hiravjoshi4@gmail.com"
                 className="p-3 rounded-lg border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 group"
               >
                 <Mail className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />

@@ -5,13 +5,31 @@ import { Briefcase, Building2, Code2, GraduationCap, Zap } from "lucide-react";
 const ExperienceSection = () => {
   const experiences = [
     {
-      title: "Operations Manager",
-      company: "Arka Infotech",
-      period: "2023 - Present",
-      description: "Led operations optimization and team coordination for software development projects. Improved efficiency by 40% through process automation.",
+      title: "MIS Executive",
+      company: "Parul University",
+      period: "2024 - Present (Full Time)",
+      description: "As an MIS Executive at Parul University, I am responsible for overseeing data management, reporting, and process optimization within the institution’s management information systems. My role involves streamlining operations by analyzing data trends, generating accurate reports, and ensuring compliance with institutional standards. Additionally, I contribute to decision-making support by maintaining databases, supervising information flow, and implementing process improvements to enhance efficiency and organizational performance.",
       icon: Building2,
       color: "neon-blue",
       skills: ["Team Leadership", "Process Optimization", "Project Management", "Operations Strategy"]
+    },
+    {
+      title: "Operation Manager and Team lead",
+      company: "Arka Infotech",
+      period: "2024 0(Part Time)",
+      description: "I have experience in overseeing employee management, including hiring, training, performance evaluation, and staff development. My role also involved streamlining operations by optimizing processes, managing budgets, and ensuring quality assurance and compliance across functions. Additionally, I supervised project delivery, supply chain logistics, and workplace standards to drive efficiency, maintain consistency, and achieve operational excellence",
+      icon: Building2,
+      color: "neon-blue",
+      skills: ["Team Leadership", "Process Optimization", "Project Management", "Operations Strategy"]
+    },
+    {
+      title: "AI Automation Engineer Intern",
+      company: "EcoWoodies",
+      period: "2024",
+      description: "During my internship as an AI Automation Engineer at Ecowoodies, I was responsible for overseeing automation workflows and enhancing operational efficiency through AI-driven solutions. My role involved streamlining processes by designing intelligent automation systems, optimizing data handling, and ensuring accuracy and compliance. Additionally, I contributed to project delivery by implementing automation strategies, managing tasks, and maintaining high workplace standards to drive efficiency and innovation.",
+      icon: Zap,
+      color: "electric-purple",
+      skills: ["AI/ML", "Process Automation", "Sustainability Tech", "Innovation"]
     },
     {
       title: "Software Developer Intern",
@@ -40,15 +58,7 @@ const ExperienceSection = () => {
       color: "neon-blue",
       skills: ["Communication", "Customer Service", "Documentation", "Problem Solving"]
     },
-    {
-      title: "AI Automation Engineer Intern",
-      company: "EcoWoodies",
-      period: "2022",
-      description: "Implemented AI-driven automation solutions for business processes. Focused on environmental sustainability applications.",
-      icon: Zap,
-      color: "electric-purple",
-      skills: ["AI/ML", "Process Automation", "Sustainability Tech", "Innovation"]
-    }
+
   ];
 
   return (
@@ -74,7 +84,7 @@ const ExperienceSection = () => {
           <div className="relative">
             {/* Timeline line */}
             <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-neon-blue via-electric-purple to-cyber-green"></div>
-            
+
             {experiences.map((exp, index) => {
               const IconComponent = exp.icon;
               const borderColor = `border-${exp.color}/20`;
@@ -82,19 +92,19 @@ const ExperienceSection = () => {
               const iconBgColor = `bg-${exp.color}/10`;
               const iconTextColor = `text-${exp.color}`;
               const timelineDotColor = `bg-${exp.color}`;
-              const shadowClass = exp.color === 'neon-blue' ? 'hover:shadow-elegant' : 
-                                 exp.color === 'electric-purple' ? 'hover:shadow-glow-secondary' :
-                                 'hover:shadow-[0_4px_16px_hsl(var(--cyber-green)/0.2)]';
+              const shadowClass = exp.color === 'neon-blue' ? 'hover:shadow-elegant' :
+                exp.color === 'electric-purple' ? 'hover:shadow-glow-secondary' :
+                  'hover:shadow-[0_4px_16px_hsl(var(--cyber-green)/0.2)]';
 
               return (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className={`relative pl-20 mb-12 animate-slide-up`}
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
                   {/* Timeline dot */}
                   <div className={`absolute left-6 top-6 w-4 h-4 ${timelineDotColor} rounded-full shadow-lg`}></div>
-                  
+
                   <Card className={`bg-dark-surface ${borderColor} ${hoverBorderColor} ${shadowClass} transition-all duration-300 hover:scale-105 group`}>
                     <CardHeader className="pb-4">
                       <div className="flex items-start justify-between">
@@ -111,8 +121,8 @@ const ExperienceSection = () => {
                             </p>
                           </div>
                         </div>
-                        <Badge 
-                          variant="outline" 
+                        <Badge
+                          variant="outline"
                           className={`border-${exp.color}/30 text-${exp.color} font-medium`}
                         >
                           {exp.period}
@@ -123,12 +133,12 @@ const ExperienceSection = () => {
                       <p className="font-body text-silver-text mb-6 leading-relaxed">
                         {exp.description}
                       </p>
-                      
+
                       <div className="flex flex-wrap gap-2">
                         {exp.skills.map((skill, skillIndex) => (
-                          <Badge 
-                            key={skillIndex} 
-                            variant="secondary" 
+                          <Badge
+                            key={skillIndex}
+                            variant="secondary"
                             className="bg-muted/50 text-silver-text hover:bg-muted transition-colors"
                           >
                             {skill}

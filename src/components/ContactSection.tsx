@@ -24,13 +24,13 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Simulate form submission
     toast({
       title: "Message Sent!",
       description: "Thank you for reaching out. I'll get back to you soon!",
     });
-    
+
     // Reset form
     setFormData({
       name: '',
@@ -44,21 +44,21 @@ const ContactSection = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "hirav.joshi@example.com",
-      href: "mailto:hirav.joshi@example.com",
+      value: "hiravjoshi4@gmail.com",
+      href: "mailto:hiravjoshi4.com",
       color: "neon-blue"
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+91 12345 67890",
-      href: "tel:+911234567890",
+      value: "+91 8799174586",
+      href: "tel:+918799174586",
       color: "electric-purple"
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "India (Relocating to Europe)",
+      value: "India",
       href: "#",
       color: "cyber-green"
     }
@@ -68,19 +68,19 @@ const ContactSection = () => {
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com/hiravjoshi",
+      href: "https://github.com/hiravjoshi-git",
       color: "neon-blue"
     },
     {
       icon: Linkedin,
-      label: "LinkedIn", 
-      href: "https://linkedin.com/in/hiravjoshi",
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/hirav-joshi/",
       color: "electric-purple"
     },
     {
       icon: Mail,
       label: "Email",
-      href: "mailto:hirav.joshi@example.com",
+      href: "mailto:hiravjoshi4@gmail.com",
       color: "cyber-green"
     }
   ];
@@ -139,7 +139,7 @@ const ContactSection = () => {
                     />
                   </div>
                 </div>
-                
+
                 <div>
                   <Input
                     name="subject"
@@ -150,7 +150,7 @@ const ContactSection = () => {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <Textarea
                     name="message"
@@ -162,11 +162,11 @@ const ContactSection = () => {
                     required
                   />
                 </div>
-                
-                <Button 
-                  type="submit" 
-                  variant="hero" 
-                  size="lg" 
+
+                <Button
+                  type="submit"
+                  variant="hero"
+                  size="lg"
                   className="w-full"
                 >
                   <Send className="mr-2 w-5 h-5" />
@@ -184,10 +184,10 @@ const ContactSection = () => {
                 const IconComponent = info.icon;
                 const iconTextColor = `text-${info.color}`;
                 const iconBgColor = `bg-${info.color}/10`;
-                
+
                 return (
-                  <Card 
-                    key={index} 
+                  <Card
+                    key={index}
                     className={`bg-dark-surface border-${info.color}/20 hover:border-${info.color} transition-all duration-300 hover:scale-105 group`}
                   >
                     <CardContent className="p-6">
@@ -199,7 +199,7 @@ const ContactSection = () => {
                           <h3 className="font-heading font-semibold text-lg text-foreground mb-1">
                             {info.label}
                           </h3>
-                          <a 
+                          <a
                             href={info.href}
                             className={`font-body text-silver-text hover:${iconTextColor} transition-colors`}
                           >
@@ -227,10 +227,10 @@ const ContactSection = () => {
                     const iconTextColor = `text-${social.color}`;
                     const borderColor = `border-${social.color}/30`;
                     const hoverBorderColor = `hover:border-${social.color}`;
-                    const shadowClass = social.color === 'neon-blue' ? 'hover:shadow-glow-primary' : 
-                                       social.color === 'electric-purple' ? 'hover:shadow-glow-secondary' :
-                                       'hover:shadow-[0_0_20px_hsl(var(--cyber-green)/0.5)]';
-                    
+                    const shadowClass = social.color === 'neon-blue' ? 'hover:shadow-glow-primary' :
+                      social.color === 'electric-purple' ? 'hover:shadow-glow-secondary' :
+                        'hover:shadow-[0_0_20px_hsl(var(--cyber-green)/0.5)]';
+
                     return (
                       <a
                         key={index}
@@ -253,7 +253,7 @@ const ContactSection = () => {
                 Ready to Innovate Together?
               </h3>
               <p className="font-body text-silver-text leading-relaxed">
-                Whether you're a university in Europe, a tech company, or a fellow developer, 
+                Whether you're a university in Europe, a tech company, or a fellow developer,
                 I'm excited to explore collaboration opportunities and create extraordinary solutions.
               </p>
             </div>
