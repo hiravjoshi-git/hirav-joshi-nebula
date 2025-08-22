@@ -19,7 +19,7 @@ export default function CometCardDemo() {
               loading="lazy"
               className="absolute inset-0 h-full w-full rounded-[16px] bg-[#000000] object-cover contrast-75"
               alt="Invite background"
-              src="https://images.unsplash.com/photo-1505506874110-6a7a69069a08?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="https://images.unsplash.com/photo-1505506874110-6a7a69069a08?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               style={{
                 boxShadow: "rgba(0, 0, 0, 0.05) 0px 5px 6px 0px",
                 opacity: 1,
