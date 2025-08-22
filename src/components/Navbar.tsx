@@ -20,53 +20,60 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-lg border-b border-border/30 shadow-lg">
       <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <img 
-              src="/logo.png" 
-              alt="Hirav Joshi Logo" 
-              className="h-8 w-8 rounded-md"
-              onError={(e) => {
-                // Fallback to initials if logo doesn't exist
-                const target = e.currentTarget as HTMLImageElement;
-                target.style.display = 'none';
-                const fallback = target.nextElementSibling as HTMLDivElement;
-                if (fallback) fallback.style.display = 'flex';
-              }}
-            />
-            <div 
-              className="hidden h-8 w-8 bg-primary rounded-md items-center justify-center text-primary-foreground font-bold text-sm"
-            >
-              HJ
+          <div className="flex items-center space-x-3 group cursor-pointer hover:scale-105 transition-all duration-300">
+            <div className="relative">
+              <img 
+                src="/logo.png" 
+                alt="Hirav Joshi Logo" 
+                className="h-10 w-10 rounded-lg transition-all duration-300 group-hover:shadow-lg group-hover:shadow-primary/25"
+                onError={(e) => {
+                  // Fallback to initials if logo doesn't exist
+                  const target = e.currentTarget as HTMLImageElement;
+                  target.style.display = 'none';
+                  const fallback = target.nextElementSibling as HTMLDivElement;
+                  if (fallback) fallback.style.display = 'flex';
+                }}
+              />
+              <div 
+                className="hidden h-10 w-10 bg-gradient-to-br from-primary to-primary/70 rounded-lg items-center justify-center text-primary-foreground font-bold text-sm shadow-lg shadow-primary/25"
+              >
+                HJ
+              </div>
             </div>
-            <span className="font-heading font-bold text-lg text-foreground">
+            <span className="font-heading font-bold text-xl text-foreground group-hover:text-primary transition-colors duration-300">
               Hirav Joshi
             </span>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-1">
             {navLinks.map((link) => (
               <button
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
-                className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
+                className="relative px-4 py-2 text-muted-foreground hover:text-primary transition-all duration-300 font-medium group rounded-lg hover:bg-primary/5"
               >
-                {link.label}
+                <span className="relative z-10">{link.label}</span>
+                <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 group-hover:w-3/4 transform -translate-x-1/2 rounded-full"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
               </button>
             ))}
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => window.open('/resume.pdf', '_blank')}
-              className="border-primary/50 text-foreground hover:bg-primary/10 hover:border-primary transition-all duration-300"
-            >
-              <Download className="mr-2 w-4 h-4" />
-              Resume
-            </Button>
+            <div className="ml-4">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => window.open('/resume.pdf', '_blank')}
+                className="relative overflow-hidden border-primary/50 text-foreground hover:text-primary-foreground hover:border-primary transition-all duration-300 group hover:shadow-lg hover:shadow-primary/25"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <Download className="mr-2 w-4 h-4 relative z-10 group-hover:scale-110 transition-transform duration-300" />
+                <span className="relative z-10">Resume</span>
+              </Button>
+            </div>
           </div>
 
           {/* Mobile menu button */}
@@ -75,12 +82,13 @@ const Navbar = () => {
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2"
+              className="relative p-3 hover:bg-primary/10 transition-all duration-300 group"
             >
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
               {isOpen ? (
-                <X className="h-5 w-5 text-foreground" />
+                <X className="h-6 w-6 text-foreground relative z-10 group-hover:text-primary group-hover:rotate-90 transition-all duration-300" />
               ) : (
-                <Menu className="h-5 w-5 text-foreground" />
+                <Menu className="h-6 w-6 text-foreground relative z-10 group-hover:text-primary transition-all duration-300" />
               )}
             </Button>
           </div>
@@ -88,28 +96,32 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden border-t border-border/50 py-4 space-y-4 bg-background/95 backdrop-blur-md">
+          <div className="md:hidden border-t border-border/30 py-6 space-y-2 bg-background/95 backdrop-blur-lg">
             {navLinks.map((link) => (
               <button
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
-                className="block w-full text-left text-muted-foreground hover:text-primary transition-colors duration-200 font-medium py-2"
+                className="relative block w-full text-left text-muted-foreground hover:text-primary transition-all duration-300 font-medium py-3 px-4 rounded-lg hover:bg-primary/5 group"
               >
-                {link.label}
+                <span className="relative z-10">{link.label}</span>
+                <div className="absolute left-0 top-1/2 w-0 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 group-hover:w-8 transform -translate-y-1/2 rounded-full"></div>
               </button>
             ))}
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => {
-                window.open('/resume.pdf', '_blank');
-                setIsOpen(false);
-              }}
-              className="w-full border-primary/50 text-foreground hover:bg-primary/10 hover:border-primary transition-all duration-300"
-            >
-              <Download className="mr-2 w-4 h-4" />
-              Resume
-            </Button>
+            <div className="pt-4">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => {
+                  window.open('/resume.pdf', '_blank');
+                  setIsOpen(false);
+                }}
+                className="relative overflow-hidden w-full border-primary/50 text-foreground hover:text-primary-foreground hover:border-primary transition-all duration-300 group hover:shadow-lg hover:shadow-primary/25"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <Download className="mr-2 w-4 h-4 relative z-10 group-hover:scale-110 transition-transform duration-300" />
+                <span className="relative z-10">Resume</span>
+              </Button>
+            </div>
           </div>
         )}
       </div>
