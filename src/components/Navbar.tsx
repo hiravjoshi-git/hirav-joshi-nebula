@@ -24,29 +24,12 @@ const Navbar = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-3 group cursor-pointer hover:scale-105 transition-all duration-300">
-            <div className="relative">
-              <img 
-                src="/logo.png" 
-                alt="Hirav Joshi Logo" 
-                className="h-10 w-10 rounded-lg transition-all duration-300 group-hover:shadow-lg group-hover:shadow-primary/25"
-                onError={(e) => {
-                  // Fallback to initials if logo doesn't exist
-                  const target = e.currentTarget as HTMLImageElement;
-                  target.style.display = 'none';
-                  const fallback = target.nextElementSibling as HTMLDivElement;
-                  if (fallback) fallback.style.display = 'flex';
-                }}
-              />
-              <div 
-                className="hidden h-10 w-10 bg-gradient-to-br from-primary to-primary/70 rounded-lg items-center justify-center text-primary-foreground font-bold text-sm shadow-lg shadow-primary/25"
-              >
-                HJ
-              </div>
-            </div>
-            <span className="font-heading font-bold text-xl text-foreground group-hover:text-primary transition-colors duration-300">
-              Hirav Joshi
-            </span>
+          <div className="flex items-center group cursor-pointer hover:scale-110 transition-all duration-300">
+            <img 
+              src="/lovable-uploads/16aa588c-3911-4e5d-9c0f-c4e7f6ce146e.png" 
+              alt="Hirav Joshi Logo" 
+              className="h-14 w-auto transition-all duration-300 group-hover:shadow-lg group-hover:shadow-primary/25 group-hover:drop-shadow-lg"
+            />
           </div>
 
           {/* Desktop Navigation */}
