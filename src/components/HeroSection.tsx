@@ -4,6 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import { Float, OrbitControls } from "@react-three/drei";
 import { Suspense, useRef } from "react";
 import { Mesh } from "three";
+import Navbar from "@/components/Navbar";
 
 // 3D Scene Component - Futuristic Robot-like Design
 const TechCube = ({ position }: { position: [number, number, number] }) => {
@@ -168,9 +169,11 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Modern dark gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-darker-surface to-dark-surface"></div>
+    <>
+      <Navbar />
+      <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
+        {/* Modern dark gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-darker-surface to-dark-surface"></div>
 
       {/* Animated particles and flowing elements */}
       <div className="absolute inset-0">
@@ -291,11 +294,12 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ArrowDown className="w-5 h-5 text-muted-foreground/60" />
-      </div>
-    </section>
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <ArrowDown className="w-5 h-5 text-muted-foreground/60" />
+        </div>
+      </section>
+    </>
   );
 };
 
