@@ -9,14 +9,14 @@ const AboutSection = () => {
         <div className="absolute top-10 right-10 w-64 h-64 bg-electric-purple/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-10 left-10 w-80 h-80 bg-neon-blue/5 rounded-full blur-3xl"></div>
       </div>
-      
+
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="font-heading font-extrabold text-4xl md:text-6xl mb-6">
             <span className="text-transparent bg-gradient-primary bg-clip-text">About Me</span>
           </h2>
           <p className="font-body text-xl text-silver-text max-w-3xl mx-auto leading-relaxed">
-            Driven by innovation and academic excellence, I'm a Computer Science graduate ready to make my mark in Europe's tech landscape.
+            Computer Science graduate with a passion for technology and innovation. Driven to create meaningful and impactful solutions.
           </p>
         </div>
 
@@ -31,8 +31,7 @@ const AboutSection = () => {
               </div>
               <h3 className="font-heading font-bold text-2xl mb-4 text-foreground">Academic Excellence</h3>
               <p className="font-body text-silver-text leading-relaxed">
-                B.Tech in Computer Science Engineering from Parul University. 
-                Strong foundation in algorithms, data structures, and software engineering principles.
+                B.Tech in Computer Science and Engineering from Parul University with strong knowledge of programming, algorithms, and software design.
               </p>
             </CardContent>
           </Card>
@@ -47,8 +46,7 @@ const AboutSection = () => {
               </div>
               <h3 className="font-heading font-bold text-2xl mb-4 text-foreground">Future Vision</h3>
               <p className="font-body text-silver-text leading-relaxed">
-                Pursuing Master's studies in Europe, specializing in AI, Machine Learning, and Data Analytics. 
-                Ready to contribute to cutting-edge research and innovation.
+                Aiming to specialize in AI, Machine Learning, and Data Analytics to create solutions that drive innovation and real-world impact.
               </p>
             </CardContent>
           </Card>
@@ -63,8 +61,7 @@ const AboutSection = () => {
               </div>
               <h3 className="font-heading font-bold text-2xl mb-4 text-foreground">Innovation Mindset</h3>
               <p className="font-body text-silver-text leading-relaxed">
-                Blending creativity with technical expertise to solve complex problems. 
-                Passionate about building solutions that make a meaningful impact.
+                Creative problem-solver with technical expertise, focused on building applications that deliver lasting value.
               </p>
             </CardContent>
           </Card>
@@ -74,10 +71,10 @@ const AboutSection = () => {
         <div className="mt-16 text-center">
           <div className="max-w-4xl mx-auto">
             <p className="font-body text-lg text-silver-text leading-relaxed">
-              My journey combines <span className="text-neon-blue font-semibold">technical proficiency</span> with 
-              <span className="text-electric-purple font-semibold"> academic rigor</span> and 
-              <span className="text-cyber-green font-semibold"> innovative thinking</span>. 
-              From hands-on development experience to leadership roles, I'm prepared to excel in Europe's dynamic tech ecosystem.
+              My journey combines <span className="text-neon-blue font-semibold">technical proficiency</span> with
+              <span className="text-electric-purple font-semibold"> academic rigor</span> and
+              <span className="text-cyber-green font-semibold"> innovative thinking</span>.
+              “From hands-on development experience to leadership roles, prepared to excel in the evolving global tech landscape.”
             </p>
           </div>
         </div>
