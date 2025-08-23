@@ -26,7 +26,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center group cursor-pointer hover:scale-110 transition-all duration-300">
             <a href="/">            <img
-              src="/favicon.png"
+              src="/public/favicon.png"
               className="h-14 w-auto rounded-xl transition-all duration-300 group-hover:shadow-lg group-hover:shadow-primary/25 group-hover:drop-shadow-lg"
             /></a>
           </div>
