@@ -199,39 +199,39 @@ const HeroSection = () => {
           <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-accent/[0.02] rounded-full blur-3xl animate-float" style={{ animationDelay: '1.8s' }}></div>
         </div>
 
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-7xl mx-auto">
             {/* Left Column - Content */}
-            <div className="space-y-8 animate-slide-up">
+            <div className="space-y-6 sm:space-y-8 animate-slide-up order-2 lg:order-1">
               {/* Name */}
               <div>
-                <h1 className="font-heading font-bold text-4xl md:text-5xl xl:text-6xl text-foreground leading-tight">
+                <h1 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl xl:text-6xl text-foreground leading-tight text-center lg:text-left">
                   Hirav Joshi
                 </h1>
               </div>
 
               {/* Title */}
               <div className="animate-slide-up" style={{ animationDelay: '0.2s' }}>
-                <h2 className="font-heading text-xl md:text-2xl xl:text-3xl text-primary font-semibold">
+                <h2 className="font-heading text-lg sm:text-xl md:text-2xl xl:text-3xl text-primary font-semibold text-center lg:text-left">
                   Operation Executive | Flutter Developer
                 </h2>
               </div>
 
               {/* Tagline */}
               <div className="animate-slide-up" style={{ animationDelay: '0.4s' }}>
-                <p className="font-body text-lg md:text-xl text-muted-foreground leading-relaxed max-w-lg">
+                <p className="font-body text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-lg mx-auto lg:mx-0 text-center lg:text-left">
                   Computer Science Graduate crafting innovative solutions with modern technologies.
                   Blending design and technology to create impactful digital products.
                 </p>
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 animate-slide-up" style={{ animationDelay: '0.6s' }}>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-slide-up justify-center lg:justify-start" style={{ animationDelay: '0.6s' }}>
                 <Button
                   variant="default"
                   size="lg"
                   onClick={() => scrollToSection('projects')}
-                  className="group bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow-primary"
+                  className="group bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow-primary w-full sm:w-auto"
                 >
                   View My Work
                   <ArrowDown className="ml-2 w-4 h-4 group-hover:translate-y-1 transition-transform" />
@@ -240,7 +240,7 @@ const HeroSection = () => {
                   variant="outline"
                   size="lg"
                   onClick={() => scrollToSection('contact')}
-                  className="border-primary/50 text-foreground hover:bg-primary/10 hover:border-primary transition-all duration-300"
+                  className="border-primary/50 text-foreground hover:bg-primary/10 hover:border-primary transition-all duration-300 w-full sm:w-auto"
                 >
                   <Mail className="mr-2 w-4 h-4" />
                   Contact Me
@@ -248,38 +248,38 @@ const HeroSection = () => {
               </div>
 
               {/* Social Links */}
-              <div className="flex gap-4 animate-slide-up" style={{ animationDelay: '0.8s' }}>
+              <div className="flex gap-3 sm:gap-4 animate-slide-up justify-center lg:justify-start" style={{ animationDelay: '0.8s' }}>
                 <a
                   href="https://github.com/hiravjoshi-git"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-lg border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 group"
+                  className="p-2 sm:p-3 rounded-lg border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 group"
                 >
-                  <Github className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                  <Github className="w-4 sm:w-5 h-4 sm:h-5 text-muted-foreground group-hover:text-primary transition-colors" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/hirav-joshi/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-lg border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 group"
+                  className="p-2 sm:p-3 rounded-lg border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 group"
                 >
-                  <Linkedin className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                  <Linkedin className="w-4 sm:w-5 h-4 sm:h-5 text-muted-foreground group-hover:text-primary transition-colors" />
                 </a>
                 <a
                   href="mailto:hiravjoshi4@gmail.com"
-                  className="p-3 rounded-lg border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 group"
+                  className="p-2 sm:p-3 rounded-lg border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 group"
                 >
-                  <Mail className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                  <Mail className="w-4 sm:w-5 h-4 sm:h-5 text-muted-foreground group-hover:text-primary transition-colors" />
                 </a>
               </div>
             </div>
 
             {/* Right Column - 3D Scene */}
-            <div className="relative animate-slide-up" style={{ animationDelay: '0.4s' }}>
-              <div className="h-96 w-full max-w-md mx-auto lg:mx-0 lg:ml-auto">
+            <div className="relative animate-slide-up order-1 lg:order-2" style={{ animationDelay: '0.4s' }}>
+              <div className="h-64 sm:h-80 lg:h-96 w-full max-w-sm sm:max-w-md mx-auto lg:mx-0 lg:ml-auto">
                 <Suspense fallback={
                   <div className="h-full w-full flex items-center justify-center">
-                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+                    <div className="animate-spin rounded-full h-6 sm:h-8 w-6 sm:w-8 border-b-2 border-primary"></div>
                   </div>
                 }>
                   <Canvas

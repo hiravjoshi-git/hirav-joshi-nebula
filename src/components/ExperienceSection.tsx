@@ -69,12 +69,12 @@ const ExperienceSection = () => {
         <div className="absolute bottom-16 left-16 w-96 h-96 bg-neon-blue/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="font-heading font-extrabold text-4xl md:text-6xl mb-6">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 sm:mb-6">
             <span className="text-transparent bg-gradient-primary bg-clip-text">Experience</span>
           </h2>
-          <p className="font-body text-xl text-silver-text max-w-3xl mx-auto leading-relaxed">
+          <p className="font-body text-base sm:text-lg lg:text-xl text-silver-text max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
             Professional journey spanning operations management, software development, and emerging technologies.
           </p>
         </div>
@@ -82,8 +82,8 @@ const ExperienceSection = () => {
         <div className="max-w-4xl mx-auto">
           {/* Timeline container */}
           <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-neon-blue via-electric-purple to-cyber-green"></div>
+            {/* Timeline line - hidden on mobile */}
+            <div className="absolute left-4 sm:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-neon-blue via-electric-purple to-cyber-green hidden sm:block"></div>
 
             {experiences.map((exp, index) => {
               const IconComponent = exp.icon;
@@ -99,38 +99,38 @@ const ExperienceSection = () => {
               return (
                 <div
                   key={index}
-                  className={`relative pl-20 mb-12 animate-slide-up`}
+                  className={`relative pl-0 sm:pl-20 mb-8 sm:mb-12 animate-slide-up`}
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
-                  {/* Timeline dot */}
-                  <div className={`absolute left-6 top-6 w-4 h-4 ${timelineDotColor} rounded-full shadow-lg`}></div>
+                  {/* Timeline dot - hidden on mobile */}
+                  <div className={`absolute left-2 sm:left-6 top-6 w-4 h-4 ${timelineDotColor} rounded-full shadow-lg hidden sm:block`}></div>
 
                   <Card className={`bg-dark-surface ${borderColor} ${hoverBorderColor} ${shadowClass} transition-all duration-300 hover:scale-105 group`}>
                     <CardHeader className="pb-4">
-                      <div className="flex items-start justify-between">
-                        <div className="flex items-center gap-4">
-                          <div className={`p-3 rounded-full ${iconBgColor} group-hover:scale-110 transition-transform`}>
-                            <IconComponent className={`w-6 h-6 ${iconTextColor}`} />
+                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 sm:gap-0">
+                        <div className="flex items-center gap-3 sm:gap-4">
+                          <div className={`p-2 sm:p-3 rounded-full ${iconBgColor} group-hover:scale-110 transition-transform flex-shrink-0`}>
+                            <IconComponent className={`w-5 sm:w-6 h-5 sm:h-6 ${iconTextColor}`} />
                           </div>
-                          <div>
-                            <CardTitle className="font-heading font-bold text-xl text-foreground group-hover:text-transparent group-hover:bg-gradient-primary group-hover:bg-clip-text transition-all">
+                          <div className="min-w-0 flex-1">
+                            <CardTitle className="font-heading font-bold text-lg sm:text-xl text-foreground group-hover:text-transparent group-hover:bg-gradient-primary group-hover:bg-clip-text transition-all">
                               {exp.title}
                             </CardTitle>
-                            <p className={`font-body text-lg ${iconTextColor} font-semibold`}>
+                            <p className={`font-body text-base sm:text-lg ${iconTextColor} font-semibold`}>
                               {exp.company}
                             </p>
                           </div>
                         </div>
                         <Badge
                           variant="outline"
-                          className={`border-${exp.color}/30 text-${exp.color} font-medium`}
+                          className={`border-${exp.color}/30 text-${exp.color} font-medium text-xs sm:text-sm flex-shrink-0 self-start`}
                         >
                           {exp.period}
                         </Badge>
                       </div>
                     </CardHeader>
                     <CardContent>
-                      <p className="font-body text-silver-text mb-6 leading-relaxed">
+                      <p className="font-body text-sm sm:text-base text-silver-text mb-4 sm:mb-6 leading-relaxed">
                         {exp.description}
                       </p>
 
@@ -139,7 +139,7 @@ const ExperienceSection = () => {
                           <Badge
                             key={skillIndex}
                             variant="secondary"
-                            className="bg-muted/50 text-silver-text hover:bg-muted transition-colors"
+                            className="bg-muted/50 text-silver-text hover:bg-muted transition-colors text-xs sm:text-sm"
                           >
                             {skill}
                           </Badge>

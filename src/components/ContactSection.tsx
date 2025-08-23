@@ -93,17 +93,17 @@ const ContactSection = () => {
         <div className="absolute bottom-10 left-10 w-80 h-80 bg-electric-purple/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="font-heading font-extrabold text-4xl md:text-6xl mb-6">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 sm:mb-6">
             <span className="text-transparent bg-gradient-primary bg-clip-text">Get In Touch</span>
           </h2>
-          <p className="font-body text-xl text-silver-text max-w-3xl mx-auto leading-relaxed">
+          <p className="font-body text-base sm:text-lg lg:text-xl text-silver-text max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
             Ready to collaborate on innovative projects or discuss opportunities in Europe. Let's connect!
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Form */}
           <Card className="bg-dark-surface border-neon-blue/20 hover:border-neon-blue hover:shadow-elegant transition-all duration-300 animate-slide-up">
             <CardHeader>
@@ -115,8 +115,8 @@ const ContactSection = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <Input
                       name="name"
@@ -157,8 +157,8 @@ const ContactSection = () => {
                     placeholder="Your Message"
                     value={formData.message}
                     onChange={handleInputChange}
-                    rows={6}
-                    className="bg-darker-surface border-muted focus:border-neon-blue focus:ring-neon-blue/20 text-foreground placeholder:text-muted-foreground resize-none"
+                    rows={4}
+                    className="bg-darker-surface border-muted focus:border-neon-blue focus:ring-neon-blue/20 text-foreground placeholder:text-muted-foreground resize-none sm:rows-6"
                     required
                   />
                 </div>
@@ -190,18 +190,18 @@ const ContactSection = () => {
                     key={index}
                     className={`bg-dark-surface border-${info.color}/20 hover:border-${info.color} transition-all duration-300 hover:scale-105 group`}
                   >
-                    <CardContent className="p-6">
-                      <div className="flex items-center gap-4">
-                        <div className={`p-3 rounded-full ${iconBgColor} group-hover:scale-110 transition-transform`}>
-                          <IconComponent className={`w-6 h-6 ${iconTextColor}`} />
+                    <CardContent className="p-4 sm:p-6">
+                      <div className="flex items-center gap-3 sm:gap-4">
+                        <div className={`p-2 sm:p-3 rounded-full ${iconBgColor} group-hover:scale-110 transition-transform flex-shrink-0`}>
+                          <IconComponent className={`w-5 sm:w-6 h-5 sm:h-6 ${iconTextColor}`} />
                         </div>
-                        <div>
-                          <h3 className="font-heading font-semibold text-lg text-foreground mb-1">
+                        <div className="min-w-0 flex-1">
+                          <h3 className="font-heading font-semibold text-base sm:text-lg text-foreground mb-1">
                             {info.label}
                           </h3>
                           <a
                             href={info.href}
-                            className={`font-body text-silver-text hover:${iconTextColor} transition-colors`}
+                            className={`font-body text-sm sm:text-base text-silver-text hover:${iconTextColor} transition-colors break-all`}
                           >
                             {info.value}
                           </a>
@@ -221,7 +221,7 @@ const ContactSection = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="flex gap-4">
+                <div className="flex gap-3 sm:gap-4 justify-center sm:justify-start">
                   {socialLinks.map((social, index) => {
                     const IconComponent = social.icon;
                     const iconTextColor = `text-${social.color}`;
@@ -237,9 +237,9 @@ const ContactSection = () => {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`p-4 rounded-full border ${borderColor} ${hoverBorderColor} ${shadowClass} transition-all duration-300 hover:scale-110 group`}
+                        className={`p-3 sm:p-4 rounded-full border ${borderColor} ${hoverBorderColor} ${shadowClass} transition-all duration-300 hover:scale-110 group`}
                       >
-                        <IconComponent className={`w-6 h-6 text-silver-text group-hover:${iconTextColor} transition-colors`} />
+                        <IconComponent className={`w-5 sm:w-6 h-5 sm:h-6 text-silver-text group-hover:${iconTextColor} transition-colors`} />
                       </a>
                     );
                   })}
@@ -248,11 +248,11 @@ const ContactSection = () => {
             </Card>
 
             {/* Call to Action */}
-            <div className="text-center p-8 rounded-lg bg-gradient-glow border border-neon-blue/20">
-              <h3 className="font-heading font-bold text-2xl text-foreground mb-4">
+            <div className="text-center p-6 sm:p-8 rounded-lg bg-gradient-glow border border-neon-blue/20">
+              <h3 className="font-heading font-bold text-lg sm:text-xl lg:text-2xl text-foreground mb-3 sm:mb-4">
                 Ready to Innovate Together?
               </h3>
-              <p className="font-body text-silver-text leading-relaxed">
+              <p className="font-body text-sm sm:text-base text-silver-text leading-relaxed">
                 Whether you're a university in Europe, a tech company, or a fellow developer,
                 I'm excited to explore collaboration opportunities and create extraordinary solutions.
               </p>

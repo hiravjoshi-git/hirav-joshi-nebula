@@ -10,17 +10,17 @@ const AboutSection = () => {
         <div className="absolute bottom-10 left-10 w-80 h-80 bg-neon-blue/5 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="font-heading font-extrabold text-4xl md:text-6xl mb-6">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 sm:mb-6">
             <span className="text-transparent bg-gradient-primary bg-clip-text">About Me</span>
           </h2>
-          <p className="font-body text-xl text-silver-text max-w-3xl mx-auto leading-relaxed">
+          <p className="font-body text-base sm:text-lg lg:text-xl text-silver-text max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
             Computer Science graduate with a passion for technology and innovation. Driven to create meaningful and impactful solutions.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
           {/* Academic Background */}
           <Card className="bg-dark-surface border-neon-blue/20 hover:border-neon-blue transition-all duration-300 hover:shadow-elegant group">
             <CardContent className="p-8 text-center">

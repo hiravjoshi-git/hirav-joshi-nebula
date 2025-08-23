@@ -36,19 +36,19 @@ const SkillsSection = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gray-800/20 rounded-full blur-3xl animate-float" style={{ animationDelay: "6s" }}></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Section header */}
-        <div className="text-center mb-16">
-          <h2 className="font-heading font-extrabold text-4xl md:text-6xl mb-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 sm:mb-6">
             <span className="text-transparent bg-gradient-primary bg-clip-text">Skills & Expertise</span>
           </h2>
-          <p className="font-body text-xl text-silver-text max-w-3xl mx-auto leading-relaxed">
+          <p className="font-body text-base sm:text-lg lg:text-xl text-silver-text max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
             A blend of technical expertise, AI-driven innovation, and leadership capabilities.
           </p>
         </div>
 
         {/* Skill cards */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto">
           {skillCategories.map((category, index) => {
             const IconComponent = category.icon;
             return (
@@ -58,22 +58,22 @@ const SkillsSection = () => {
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <CardHeader className="pb-4">
-                  <div className="flex items-center gap-4">
-                    <div className="p-3 rounded-full bg-white/10 backdrop-blur-sm">
-                      <IconComponent className="w-6 h-6 text-white" />
+                  <div className="flex items-center gap-3 sm:gap-4">
+                    <div className="p-2 sm:p-3 rounded-full bg-white/10 backdrop-blur-sm flex-shrink-0">
+                      <IconComponent className="w-5 sm:w-6 h-5 sm:h-6 text-white" />
                     </div>
-                    <CardTitle className="font-heading font-bold text-xl text-white">
+                    <CardTitle className="font-heading font-bold text-lg sm:text-xl text-white">
                       {category.title}
                     </CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                     {category.skills.map((skill, skillIndex) => (
                       <Badge
                         key={skillIndex}
                         variant="outline"
-                        className="border-white/30 text-white justify-center py-2 px-3 font-medium transition-all hover:scale-105"
+                        className="border-white/30 text-white justify-center py-1.5 sm:py-2 px-2 sm:px-3 font-medium transition-all hover:scale-105 text-xs sm:text-sm"
                       >
                         {skill}
                       </Badge>
