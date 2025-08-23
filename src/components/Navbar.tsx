@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Download } from "lucide-react";
@@ -8,7 +7,7 @@ const Navbar = () => {
 
     const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId);
-        element?.scrollIntoView({ behavior: 'smooth' });
+        element?.scrollIntoView({ behavior: "smooth" });
         setIsOpen(false);
     };
 
@@ -24,13 +23,16 @@ const Navbar = () => {
         <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-lg border-b border-border/30 shadow-lg">
             <div className="container mx-auto px-6">
                 <div className="flex items-center justify-between h-20">
-                    {/* Logo */}
-                    <div className="flex items-center group cursor-pointer hover:scale-110 transition-all duration-300">
-                        <img
-                            src="/lovable-uploads/16aa588c-3911-4e5d-9c0f-c4e7f6ce146e.png"
-                            alt="Hirav Joshi Logo"
-                            className="h-14 w-auto rounded-xl transition-all duration-300 group-hover:shadow-lg group-hover:shadow-primary/25 group-hover:drop-shadow-lg"
-                        />
+                    {/* Logo - scrolls to hero */}
+                    <div
+                        onClick={() => scrollToSection("hero")}
+                        className="flex items-center group cursor-pointer hover:scale-110 transition-all duration-300"
+                    ><a href="/"><img
+                        src="/favicon.png"
+                        alt="Logo"
+                        className="h-14 w-auto rounded-xl transition-all duration-300 group-hover:shadow-lg group-hover:shadow-primary/25 group-hover:drop-shadow-lg"
+                    /></a>
+
                     </div>
 
                     {/* Desktop Navigation */}
@@ -47,16 +49,17 @@ const Navbar = () => {
                             </button>
                         ))}
                         <div className="ml-4">
-                            <Button
-                                variant="outline"
-                                size="sm"
-                                onClick={() => window.open('/resume.pdf', '_blank')}
-                                className="relative overflow-hidden border-primary/50 text-foreground hover:text-primary-foreground hover:border-primary transition-all duration-300 group hover:shadow-lg hover:shadow-primary/25"
-                            >
-                                <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                <Download className="src/assets/Resume.pdf" />
-                                <span className="relative z-10">Resume</span>
-                            </Button>
+                            <a href="/resume.pdf" download="Hirav_Joshi_Resume.pdf">
+                                <Button
+                                    variant="outline"
+                                    size="sm"
+                                    className="relative overflow-hidden border-primary/50 text-foreground hover:text-primary-foreground hover:border-primary transition-all duration-300 group hover:shadow-lg hover:shadow-primary/25"
+                                >
+                                    <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                    <Download className="mr-2 w-4 h-4 relative z-10 group-hover:scale-110 transition-transform duration-300" />
+                                    <span className="relative z-10">Resume</span>
+                                </Button>
+                            </a>
                         </div>
                     </div>
 
@@ -92,19 +95,18 @@ const Navbar = () => {
                             </button>
                         ))}
                         <div className="pt-4">
-                            <Button
-                                variant="outline"
-                                size="sm"
-                                onClick={() => {
-                                    window.open('/resume.pdf', '_blank');
-                                    setIsOpen(false);
-                                }}
-                                className="relative overflow-hidden w-full border-primary/50 text-foreground hover:text-primary-foreground hover:border-primary transition-all duration-300 group hover:shadow-lg hover:shadow-primary/25"
-                            >
-                                <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                <Download className="mr-2 w-4 h-4 relative z-10 group-hover:scale-110 transition-transform duration-300" />
-                                <span className="relative z-10">Resume</span>
-                            </Button>
+                            <a href="/resume.pdf" download="Hirav_Joshi_Resume.pdf">
+                                <Button
+                                    variant="outline"
+                                    size="sm"
+                                    onClick={() => setIsOpen(false)}
+                                    className="relative overflow-hidden w-full border-primary/50 text-foreground hover:text-primary-foreground hover:border-primary transition-all duration-300 group hover:shadow-lg hover:shadow-primary/25"
+                                >
+                                    <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                    <Download className="mr-2 w-4 h-4 relative z-10 group-hover:scale-110 transition-transform duration-300" />
+                                    <span className="relative z-10">Resume</span>
+                                </Button>
+                            </a>
                         </div>
                     </div>
                 )}
