@@ -95,7 +95,7 @@ const Navbar = () => {
                 variant="outline"
                 size="sm"
                 onClick={() => {
-                  window.open('/resume.pdf', '_blank');
+                  window.open('/Resume.pdf', '_blank');
                   setIsOpen(false);
                 }}
                 className="relative overflow-hidden w-full border-primary/50 text-foreground hover:text-primary-foreground hover:border-primary transition-all duration-300 group hover:shadow-lg hover:shadow-primary/25"
