@@ -49,7 +49,7 @@ const Navbar = () => {
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => window.open('/public/Resume.pdf', '_blank')}
+                onClick={() => window.open('/Resume.pdf', '_blank')}
                 className="relative overflow-hidden border-primary/50 text-foreground hover:text-primary-foreground hover:border-primary transition-all duration-300 group hover:shadow-lg hover:shadow-primary/25"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
