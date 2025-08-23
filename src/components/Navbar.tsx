@@ -28,7 +28,7 @@ const Navbar = () => {
             <a href="/">            <img
               src="/lovable-uploads/16aa588c-3911-4e5d-9c0f-c4e7f6ce146e.png"
               alt="Hirav Joshi Logo"
-              className="h-14 w-auto rounded-xl transition-all duration-300 group-hover:shadow-lg group-hover:shadow-primary/25 group-hover:drop-shadow-lg"
+              className="h-12 w-auto rounded-xl transition-all duration-300 group-hover:shadow-lg group-hover:shadow-primary/25 group-hover:drop-shadow-lg"
             /></a>
           </div>
 
