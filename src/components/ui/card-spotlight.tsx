@@ -44,7 +44,7 @@ export const CardSpotlight = ({
       {...props}
     >
       <motion.div
-        className="pointer-events-none absolute z-0 -inset-px rounded-md opacity-0 transition duration-300 group-hover/spotlight:opacity-100"
+        className="pointer-events-none absolute -z-10 -inset-px rounded-md opacity-0 transition duration-300 group-hover/spotlight:opacity-100"
         style={{
           backgroundColor: color,
           maskImage: useMotionTemplate`
@@ -59,7 +59,7 @@ export const CardSpotlight = ({
         {isHovering && (
           <CanvasRevealEffect
             animationSpeed={5}
-            containerClassName="bg-transparent absolute inset-0 pointer-events-none"
+            containerClassName="bg-transparent absolute inset-0 pointer-events-none -z-10"
             colors={[
               [59, 130, 246],
               [139, 92, 246],
@@ -68,7 +68,9 @@ export const CardSpotlight = ({
           />
         )}
       </motion.div>
-      {children}
+      <div className="relative z-10">
+        {children}
+      </div>
     </div>
   );
 };
