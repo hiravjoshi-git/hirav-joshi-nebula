@@ -15,7 +15,11 @@ export const CometCard = ({
   translateDepth = 20,
   className,
   children,
+<<<<<<< HEAD
   style, // allow inline styles
+=======
+  style,
+>>>>>>> 2ca992ff9e4e7a8e138785dc698089b0d82df26d
 }: {
   rotateDepth?: number;
   translateDepth?: number;
