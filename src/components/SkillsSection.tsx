@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Code, Database, BarChart3, Users } from "lucide-react";
-import { CometCard } from "@/components/ui/comet-card";
+import { CardSpotlight } from "@/components/ui/card-spotlight";
 
 const SkillsSection = () => {
   const skillCategories = [
@@ -52,9 +52,9 @@ const SkillsSection = () => {
           {skillCategories.map((category, index) => {
             const IconComponent = category.icon;
             return (
-              <CometCard
+              <CardSpotlight
                 key={index}
-                className="bg-black rounded-2xl p-6 animate-slide-up hover:scale-105 transition-transform"
+                className="animate-slide-up"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <CardHeader className="pb-4">
@@ -80,7 +80,7 @@ const SkillsSection = () => {
                     ))}
                   </div>
                 </CardContent>
-              </CometCard>
+              </CardSpotlight>
             );
           })}
         </div>
